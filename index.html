@@ -1,38 +1,60 @@
-<!DOCTYPE HTML>
-<html lang="pt-br">
-<head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<title>Faculdade Veiga de Almeida</title>
-</head>
- 
+// CardapioSorveteria.tsx
+import React, { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
-<body>
-<body bgcolor="#D3D3D3">
-</body>
-	<div style="text-align:center">
-	
-	<a href="https://drive.google.com/file/d/1pv61Wpa_sLKOfCocUtks3gIzeATX5_ox/view?usp=drive_link"><button style="background: #0000FF; border-radius: 8px; padding: 20px; cursor: pointer; color: #fff; border: none; font-size: 20px;">Alunos</button></a>
-	<a href="https://drive.google.com/file/d/1DsJXDmSn0-ly2QC63eU2Bw3oWkWLKne1/view?usp=drivesdk"><button style="background: #0000FF; border-radius: 8px; padding: 20px; cursor: pointer; color: #fff; border: none; font-size: 20px;">Personagens Juridicos</button></a>
-	<a href="https://api.whatsapp.com/send?phone=5521988872292"><button style="background: #0000FF; border-radius: 8px; padding: 20px; cursor: pointer; color: #fff; border: none; font-size: 20px;">PDF</button></a>
-	<a href="https://periodicos.ufba.br/index.php/CEPEJ/article/view/37546/21434"><button style="background: #0000FF; border-radius: 8px; padding: 20px; cursor: pointer; color: #fff; border: none; font-size: 20px;">Curiosidades</button></a>
-<head>
-		
-	<div style="text-align:center">
-	<H2>Design de Carreira Juridica<H2>
-	<h3>Todo Mundo Odei o Chris</h3>
-	<h3></h3>
-	<iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/x7zqehh?autoplay=1" title="dailymotion video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<br />
-<br />
-<br />
-	
-		<div style="text-align:center">
- <strong>Design de Carreira Juridica</strong>
- <br />
+const sabores = {
+  "Tradicionais": [
+    { nome: "Chocolate", descricao: "Clássico e cremoso", preco: "R$ 7,00" },
+    { nome: "Baunilha", descricao: "Suave e delicado", preco: "R$ 7,00" },
+    { nome: "Morango", descricao: "Feito com morangos frescos", preco: "R$ 7,00" },
+  ],
+  "Especiais": [
+    { nome: "Doce de Leite com Nozes", descricao: "Rico e crocante", preco: "R$ 9,00" },
+    { nome: "Nutella com Brownie", descricao: "Intenso e indulgente", preco: "R$ 10,00" },
+  ],
+  "Veganos": [
+    { nome: "Coco com Banana", descricao: "100% vegetal e refrescante", preco: "R$ 8,00" },
+    { nome: "Açaí", descricao: "Energia pura e sem lactose", preco: "R$ 8,50" },
+  ],
+  "Bebidas Geladas": [
+    { nome: "Milkshake de Chocolate", descricao: "300ml", preco: "R$ 12,00" },
+    { nome: "Smoothie de Frutas", descricao: "Com iogurte natural", preco: "R$ 11,00" },
+  ]
+};
 
-</br>
-</br>
-	<p>Alunos:<a href="http://www.uva.br/" target="_blank"> Rodrigo Nascimento/Camila Silva/Nicolas Figueiredo/Tayná de Almeida/Pedro Henrique/Clara Zagali</a>.</p	
-</head>
-</body>
-</html>
+export default function CardapioSorveteria() {
+  const [categoria, setCategoria] = useState("Tradicionais");
+
+  return (
+    <div className="max-w-4xl mx-auto p-4">
+      <h1 className="text-3xl font-bold text-center mb-6">🍦 Cardápio da Sorveteria</h1>
+      <Tabs value={categoria} onValueChange={setCategoria}>
+        <TabsList className="flex flex-wrap justify-center gap-2 mb-4">
+          {Object.keys(sabores).map((cat) => (
+            <TabsTrigger key={cat} value={cat}>
+              {cat}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+
+        {Object.entries(sabores).map(([cat, lista]) => (
+          <TabsContent key={cat} value={cat}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {lista.map((item, index) => (
+                <Card key={index} className="rounded-2xl shadow-lg p-4">
+                  <CardContent>
+                    <h2 className="text-xl font-semibold">{item.nome}</h2>
+                    <p className="text-sm text-gray-500">{item.descricao}</p>
+                    <p className="text-lg font-bold mt-2">{item.preco}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+        ))}
+      </Tabs>
+    </div>
+  );
+}
