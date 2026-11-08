@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08172d">
+  <meta name="description" content="GM Rio Imports — tecnologia, áudio, informática e muito mais. Consulte disponibilidade e faça seu pedido pelo WhatsApp.">
+  <title>GM Rio Imports | Tecnologia e Importados</title>
+  <style>
+    :root{--navy:#08172d;--navy2:#102746;--yellow:#f5c542;--ink:#172338;--muted:#68758a;--paper:#f5f7fb;--white:#fff;--line:#e5eaf1}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper)}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+    header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 5px 24px #06132633}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 0}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.4px}
+    .brand-mark{width:48px;height:48px;border:2px solid var(--yellow);border-radius:12px;display:grid;place-items:center;color:var(--yellow);font-size:20px;font-weight:900;box-shadow:inset 0 0 0 3px #f5c54218}
+    .brand-name{font-size:19px;line-height:1.05}.brand-name small{display:block;color:var(--yellow);font-size:11px;letter-spacing:3px;margin-top:5px}
+    nav{display:flex;gap:25px;align-items:center;font-size:14px;color:#e4ebf5}nav a:hover{color:var(--yellow)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:9px;padding:12px 18px;font-weight:800;background:var(--yellow);color:var(--navy);border:0;cursor:pointer}
+    .hero{background:radial-gradient(circle at 80% 25%,#23456d 0,transparent 32%),linear-gradient(120deg,#08172d,#102746);color:#fff;padding:78px 0 72px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+    .eyebrow{color:var(--yellow);font-size:12px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase}
+    h1{font-size:clamp(36px,5vw,58px);line-height:1.05;margin:15px 0 18px;letter-spacing:-1.5px}
+    .hero p{font-size:17px;line-height:1.7;color:#d4deeb;max-width:620px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn-outline{border:1px solid #ffffff70;color:#fff;padding:12px 18px;border-radius:9px;font-weight:800}
+    .hero-panel{border:1px solid #ffffff25;background:#ffffff0c;border-radius:20px;padding:28px;backdrop-filter:blur(5px)}
+    .hero-panel .big{font-size:42px;font-weight:900;color:var(--yellow)}.hero-panel h3{margin:5px 0 8px;font-size:21px}.hero-panel p{font-size:14px;margin:0}
+    .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+    .trust div{border-top:1px solid #ffffff30;padding-top:13px;font-size:12px;color:#d4deeb}.trust b{display:block;color:#fff;font-size:13px;margin-bottom:4px}
+    section{padding:64px 0}.section-head{text-align:center;margin-bottom:30px}.section-head h2{font-size:32px;margin:8px 0}.section-head p{color:var(--muted);margin:0}
+    .tools{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;margin:25px 0}
+    .search{flex:1;min-width:230px;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:15px;outline:none}
+    .filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:#fff;color:#46546a;border-radius:30px;padding:10px 14px;cursor:pointer;font-weight:700;font-size:13px}.filter.active,.filter:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .cat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:21px;min-height:160px;transition:.2s;display:flex;flex-direction:column}
+    .cat:hover{transform:translateY(-4px);box-shadow:0 12px 30px #12213a12;border-color:#d3dbe7}
+    .cat-icon{width:43px;height:43px;border-radius:12px;background:#fff5d6;display:grid;place-items:center;font-size:22px;margin-bottom:15px}
+    .cat h3{font-size:16px;margin:0 0 7px}.cat p{font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 14px;flex:1}
+    .cat button{background:none;border:0;padding:0;text-align:left;color:#9a7100;font-weight:900;cursor:pointer}
+    .how{background:#fff}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{padding:24px;border:1px solid var(--line);border-radius:15px}.num{font-size:13px;font-weight:900;color:#9a7100;background:#fff5d6;border-radius:50%;width:34px;height:34px;display:grid;place-items:center}.step h3{margin:15px 0 8px}.step p{color:var(--muted);font-size:14px;line-height:1.6;margin:0}
+    .assurance{background:var(--navy);color:#fff}.assurance-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.assurance h2{font-size:32px;margin:8px 0 14px}.assurance p{color:#d2ddeb;line-height:1.7}.checks{display:grid;gap:12px}.check{padding:14px 16px;border:1px solid #ffffff25;border-radius:10px;color:#edf3fa}.check span{color:var(--yellow);font-weight:900;margin-right:8px}
+    .contact-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .contact-card h2{margin:0 0 8px}.contact-card p{color:var(--muted);margin:0;line-height:1.6}
+    footer{background:#061225;color:#c4cfdd;padding:30px 0;font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.foot b{color:#fff}
+    .empty{grid-column:1/-1;text-align:center;padding:35px;color:var(--muted);background:#fff;border-radius:12px}
+    @media(max-width:850px){nav{gap:13px}.grid{grid-template-columns:repeat(2,1fr)}.hero-grid,.assurance-grid{grid-template-columns:1fr}.hero{padding:55px 0}.hero-panel{max-width:520px}}
+    @media(max-width:560px){.top{padding:12px 0}.brand-mark{width:42px;height:42px}.brand-name{font-size:16px}nav a:not(.nav-cta){display:none}.nav-cta{padding:10px 12px;font-size:12px}.grid{grid-template-columns:1fr 1fr;gap:10px}.cat{padding:15px;min-height:170px}.cat h3{font-size:14px}.cat p{font-size:12px}.steps{grid-template-columns:1fr}.contact-card{align-items:flex-start;flex-direction:column}section{padding:48px 0}.trust{grid-template-columns:1fr}.hero-panel{padding:22px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap top">
+    <a class="brand" href="#inicio" aria-label="GM Rio Imports - início">
+      <span class="brand-mark">GM</span><span class="brand-name">GM RIO<small>IMPORTS</small></span>
+    </a>
+    <nav><a href="#catalogo">Catálogo</a><a href="#como-funciona">Como comprar</a><a href="#seguranca">Segurança</a><a class="nav-cta" href="#contato">Fale conosco</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Tecnologia • Áudio • Informática</div>
+        <h1>O que você procura,<br>com atendimento de confiança.</h1>
+        <p>Encontre smartphones, computadores, áudio, instrumentos musicais e muito mais. Consulte modelos, disponibilidade e condições diretamente com a GM Rio Imports.</p>
+        <div class="hero-actions"><a class="btn" href="#catalogo">Explorar catálogo</a><a class="btn-outline" href="#contato">Solicitar orçamento</a></div>
+        <div class="trust"><div><b>Produtos originais</b>Procedência e informações claras</div><div><b>Atendimento próximo</b>Pedido acompanhado do início ao fim</div><div><b>Compra formalizada</b>Documentação fiscal conforme a operação</div></div>
+      </div>
+      <div class="hero-panel">
+        <div class="big">GM</div><h3>GM Rio Imports</h3>
+        <p>Seu próximo equipamento começa com uma boa consulta. Fale com nossa equipe e peça uma cotação personalizada.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalogo">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Explore as categorias</div><h2>Nosso catálogo</h2><p>Pesquise ou escolha uma categoria para solicitar seu orçamento.</p></div>
+      <div class="tools">
+        <input class="search" id="search" type="search" placeholder="Buscar categoria ou produto..." aria-label="Buscar no catálogo">
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="all">Todas</button>
+          <button class="filter" data-filter="tecnologia">Tecnologia</button>
+          <button class="filter" data-filter="audio">Áudio e música</button>
+          <button class="filter" data-filter="casa">Casa e lifestyle</button>
+        </div>
+      </div>
+      <div class="grid" id="categories">
+        <article class="cat" data-group="tecnologia" data-terms="smartphone celular iphone samsung motorola"><div class="cat-icon">📱</div><h3>Smartphones</h3><p>Celulares, acessórios e modelos de diversas marcas.</p><button onclick="askQuote('Smartphones')">Consultar modelos →</button></article>
+        <article class="cat" data-group="tecnologia" data-terms="tablet ipad"><div class="cat-icon">▣</div><h3>Tablets</h3><p>Tablets para trabalho, estudo e entretenimento.</p><button onclick="askQuote('Tablets')">Consultar modelos →</button></article>
+        <article class="cat" data-group="tecnologia" data-terms="notebook laptop computador"><div class="cat-icon">💻</div><h3>Notebooks</h3><p>Equipamentos para produtividade, estudo e jogos.</p><button onclick="askQuote('Notebooks')">Consultar modelos →</button></article>
+        <article class="cat" data-group="audio" data-terms="sonorização caixas som microfone amplificador"><div class="cat-icon">🔊</div><h3>Sonorização</h3><p>Caixas, microfones, amplificadores e acessórios.</p><button onclick="askQuote('Sonorização')">Consultar produtos →</button></article>
+        <article class="cat" data-group="audio" data-terms="instrumentos musicais guitarra violão teclado bateria"><div class="cat-icon">🎸</div><h3>Instrumentos musicais</h3><p>Instrumentos e acessórios para músicos.</p><button onclick="askQuote('Instrumentos musicais')">Consultar produtos →</button></article>
+        <article class="cat" data-group="audio" data-terms="estudio gravação interface audio mesa mixer monitor"><div class="cat-icon">🎚️</div><h3>Equipamentos de estúdio</h3><p>Interfaces, mixers, monitores e equipamentos de gravação.</p><button onclick="askQuote('Equipamentos de estúdio')">Consultar produtos →</button></article>
+        <article class="cat" data-group="tecnologia" data-terms="informatica pc monitor teclado mouse armazenamento"><div class="cat-icon">🖥️</div><h3>Informática</h3><p>Periféricos, componentes e acessórios.</p><button onclick="askQuote('Informática')">Consultar produtos →</button></article>
+        <article class="cat" data-group="tecnologia" data-terms="tv televisão smart tv"><div class="cat-icon">📺</div><h3>TVs</h3><p>Televisores e soluções para entretenimento.</p><button onclick="askQuote('TVs')">Consultar modelos →</button></article>
+        <article class="cat" data-group="casa" data-terms="casa inteligente smart home automação segurança"><div class="cat-icon">🏠</div><h3>Casa inteligente</h3><p>Automação, conectividade e praticidade para sua casa.</p><button onclick="askQuote('Casa inteligente')">Consultar produtos →</button></article>
+        <article class="cat" data-group="casa" data-terms="relógio smartwatch watch"><div class="cat-icon">⌚</div><h3>Relógios</h3><p>Relógios inteligentes e acessórios.</p><button onclick="askQuote('Relógios')">Consultar modelos →</button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="como-funciona">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Simples e transparente</div><h2>Como comprar</h2><p>Atendimento personalizado para cada pedido.</p></div>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h3>Escolha o produto</h3><p>Informe a categoria, marca ou modelo que está procurando.</p></div>
+        <div class="step"><div class="num">02</div><h3>Receba sua cotação</h3><p>Confirmamos disponibilidade, preço final, prazo e condições antes de você fechar o pedido.</p></div>
+        <div class="step"><div class="num">03</div><h3>Confirme e acompanhe</h3><p>Com as condições aprovadas, formalizamos a compra e orientamos sobre entrega e documentação.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="assurance" id="seguranca">
+    <div class="wrap assurance-grid">
+      <div><div class="eyebrow">Compromisso GM Rio Imports</div><h2>Clareza em cada etapa da compra.</h2><p>Trabalhamos com foco em produtos originais, informação transparente e operação realizada de acordo com as exigências aplicáveis. Garantias e cobertura são confirmadas conforme marca, modelo e política do fabricante.</p></div>
+      <div class="checks"><div class="check"><span>✓</span> Informações de produto e condições antes da confirmação</div><div class="check"><span>✓</span> Documentação fiscal conforme a operação</div><div class="check"><span>✓</span> Consulta de garantia de acordo com o fabricante e modelo</div><div class="check"><span>✓</span> Atendimento para acompanhar seu pedido</div></div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap contact-card">
+      <div><div class="eyebrow">Vamos encontrar o que você precisa?</div><h2>Peça seu orçamento</h2><p>Envie a marca, o modelo ou uma referência do produto.<br>Vamos consultar as opções e retornar com as informações.</p></div>
+      <a class="btn" href="#" onclick="askQuote('Olá! Gostaria de solicitar um orçamento.');return false;">Conversar pelo WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap foot"><div><b>GM Rio Imports</b><br>Catálogo e atendimento sob consulta.</div><div>© <span id="year"></span> GM Rio Imports. Todos os direitos reservados.</div></div></footer>
+
+<script>
+  // CONFIGURAÇÃO: substitua pelo número do WhatsApp da loja, com código do país e DDD.
+  // Exemplo de formato: 5521999999999 (somente números).
+  const WHATSAPP_NUMBER = "SEU_NUMERO_AQUI";
+
+  function askQuote(item) {
+    const message = `Olá! Vim pelo site da GM Rio Imports e gostaria de consultar: ${item}. Poderia me informar disponibilidade, preço e prazo?`;
+    if (!WHATSAPP_NUMBER || WHATSAPP_NUMBER === "SEU_NUMERO_AQUI") {
+      alert("O catálogo está pronto. Para ativar este botão, configure o número de WhatsApp da loja no código do site.");
+      return;
+    }
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+  }
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const cards = [...document.querySelectorAll(".cat")];
+  const search = document.getElementById("search");
+  let activeFilter = "all";
+  function applyFilters() {
+    const term = search.value.trim().toLocaleLowerCase("pt-BR");
+    let visible = 0;
+    cards.forEach(card => {
+      const text = (card.innerText + " " + card.dataset.terms).toLocaleLowerCase("pt-BR");
+      const match = (activeFilter === "all" || card.dataset.group === activeFilter) && text.includes(term);
+      card.hidden = !match;
+      if (match) visible++;
+    });
+    let empty = document.querySelector(".empty");
+    if (!visible && !empty) {
+      empty = document.createElement("div"); empty.className = "empty"; empty.textContent = "Nenhuma categoria encontrada. Tente outro termo.";
+      document.getElementById("categories").appendChild(empty);
+    } else if (visible && empty) empty.remove();
+  }
+  search.addEventListener("input", applyFilters);
+  document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => {
+    document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
+    button.classList.add("active"); activeFilter = button.dataset.filter; applyFilters();
+  }));
+</script>
+</body>
+</html>
